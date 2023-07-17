@@ -1,30 +1,36 @@
-// // Get a reference to all the sections with class "section"
-// const sections = document.querySelectorAll('.section');
-
-// // Create and append pop-up elements to each section
-// sections.forEach(section => {
-//   const popup = document.createElement('div');
-//   popup.className = 'popup';
-//   popup.innerHTML = '<h3>Pop-up Content</h3><p>This is the content of the pop-up.</p>';
-//   section.appendChild(popup);
-// });
-
-// // Function to check the visibility of each pop-up
-// function checkPopupVisibility() {
-//   sections.forEach(section => {
-//     const popup = section.querySelector('.popup');
-//     const rect = section.getBoundingClientRect();
-
-//     if (rect.top < window.innerHeight && rect.bottom >= 0) {
-//       popup.classList.add('active');
-//     } else {
-//       popup.classList.remove('active');
-//     }
-//   });
-// }
-
-// // Attach the scroll event listener to the window
-// window.addEventListener('scroll', checkPopupVisibility);
-
-// // Initial check to show pop-ups based on the initial scroll position
-// checkPopupVisibility();
+function handleIntersection(entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      } else {
+        entry.target.classList.remove('is-visible'); // Remove the 'is-visible' class when the section is not intersecting
+      }
+    });
+  }
+  
+  const sections = document.querySelectorAll('.section');
+  
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.25, // Adjust this value to control when the animation starts
+  };
+  
+  const observer = new IntersectionObserver(handleIntersection, observerOptions);
+  
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
+  
+  // Re-observe sections when scrolling back to the top of the page
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  
+    if (scrollTop === 0) {
+      sections.forEach((section) => {
+        observer.observe(section);
+      });
+    }
+  });
+  

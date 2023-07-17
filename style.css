@@ -146,9 +146,45 @@ font-family: 'Roboto', sans-serif;
     padding: 0.5rem;
     height: inherit;
     width: 80%; 
-    font-family: "Merriweather", serif;
+    font-family: 'Libre Baskerville', serif;
     box-shadow: 1px 1px 1rem #393E46;
     
+}
+
+/* skills section */
+.skills {
+  position: relative;
+  top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+
+
+.skill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, .125);
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  height: 60vh;
+  width: 80%; 
+  font-family: 'Libre Baskerville', serif;
+  box-shadow: 1px 1px 1rem #393E46;
+  
+
 }
 
 
@@ -181,7 +217,7 @@ font-family: 'Roboto', sans-serif;
   padding: 0.5rem;
   height: 60vh;
   width: 80%; 
-  font-family: "Merriweather", serif;
+  font-family: 'Libre Baskerville', serif;
   box-shadow: 1px 1px 1rem #393E46;
   
 }
@@ -216,8 +252,12 @@ font-family: 'Roboto', sans-serif;
     padding: 2rem;
     height: inherit;
     width: 80%;
-    font-family: "Merriweather", serif;
+    font-family: 'Libre Baskerville', serif;
     box-shadow: 1px 1px 1rem #393E46;
+   
+}
+.wexperience li {
+  margin-bottom: 15px;
 }
 
 
@@ -282,4 +322,27 @@ a {
     color: blue;
     text-decoration: underline;
     position: relative;
+  }
+
+
+  .section {
+    opacity: 0;
+    transform: translateX(-20px); /* Start the content off-screen to the left */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+  
+  .section.is-visible {
+    opacity: 1;
+    transform: translateX(0); /* Slide the content to its original position */
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
