@@ -44,12 +44,14 @@ font-family: 'Roboto', sans-serif;
   font-weight: 700px;
   color: #fff;
   flex-direction: column;
+  
 }
 
 
 .profile {
   position: relative;
   display: inline-block;
+  
 }
 
 .profile img {
@@ -179,12 +181,11 @@ font-family: 'Roboto', sans-serif;
   border: 1px solid rgba(0, 0, 0, .125);
   border-radius: 0.25rem;
   padding: 0.5rem;
-  height: 60vh;
+  min-height: 60vh;
   width: 80%; 
   font-family: 'Libre Baskerville', serif;
   box-shadow: 1px 1px 1rem #393E46;
   
-
 }
 
 
@@ -205,7 +206,7 @@ font-family: 'Roboto', sans-serif;
 .cert {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items:  center;
   position: relative;
   flex-direction: column;
   min-width: 0;
@@ -215,7 +216,7 @@ font-family: 'Roboto', sans-serif;
   border: 1px solid rgba(0, 0, 0, .125);
   border-radius: 0.25rem;
   padding: 0.5rem;
-  height: 60vh;
+  min-height: inherit;
   width: 80%; 
   font-family: 'Libre Baskerville', serif;
   box-shadow: 1px 1px 1rem #393E46;
@@ -223,12 +224,55 @@ font-family: 'Roboto', sans-serif;
 }
 
 .cert img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 80%;
+  max-height: 80%;
 }
 
+/* project section */
+.projects {
+  position: relative;
+  top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+}
 
+.project {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, .125);
+  border-radius: 0.25rem;
+  padding: 2rem;
+  height: inherit;
+  width: 80%;
+  font-family: 'Libre Baskerville', serif;
+  box-shadow: 1px 1px 1rem #393E46;
+  
+}
 
+.section ul li{
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.arrow {
+  font-size: 30px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  display: inline-block;
+  border-bottom: none;
+}
+
+.arrow-link:hover .arrow {
+  transform: translateX(10px);
+}
+/* experience section */
 .Jexperience {
     position: relative;
     top: 140px;
@@ -261,6 +305,7 @@ font-family: 'Roboto', sans-serif;
 }
 
 
+
 .cc-contact-information {
     position: relative;
     top: 180px;
@@ -268,7 +313,7 @@ font-family: 'Roboto', sans-serif;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 50vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -276,7 +321,9 @@ font-family: 'Roboto', sans-serif;
     background-size: cover;
     background-position: center;
     width: 100%;
+    overflow: hidden;
     z-index: -1;
+    
 
 }
 .row {
@@ -284,6 +331,10 @@ font-family: 'Roboto', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    min-height: 20vh;
+    
+  
 }
 
 
@@ -294,6 +345,10 @@ a {
     margin: 10px px;
     text-decoration: none;
 }
+
+
+
+/* footer */
 .bottom-container {
     position: relative;
     top: 150px;
@@ -325,10 +380,13 @@ a {
   }
 
 
+
+  /* section  animation */
   .section {
     opacity: 0;
     transform: translateX(-20px); /* Start the content off-screen to the left */
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
   }
   
   .section.is-visible {
@@ -346,3 +404,4 @@ a {
       transform: translateX(0);
     }
   }
+
