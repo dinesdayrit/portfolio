@@ -1,0 +1,12 @@
+@media (max-width: 767px) {
+    .nav-item .nav-link {
+      border-bottom: none;
+      padding-bottom: 5px;
+    }
+
+    .nav-item .nav-link:hover {
+      border-bottom: 2px solid #5448f7; /* Adjust the color as desired */
+    }
+
+  }
+
