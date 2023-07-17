@@ -1,0 +1,29 @@
+@media (max-width: 767px) {
+    .nav-item .nav-link {
+      border-bottom: none;
+      padding-bottom: 5px;
+    }
+
+    .nav-item .nav-link:hover {
+      border-bottom: 2px solid #5448f7; /* Adjust the color as desired */
+    }
+
+    /* home */
+    #home {
+      position: relative;
+      background-image: url(./assets/images/ales-nesetril-Im7lZjxeLhg-unsplash.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700px;
+      color: #fff;
+      flex-direction: column;
+      
+    }
+  }
+
